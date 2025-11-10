@@ -1,5 +1,4 @@
 // src/DashboardMonitorTV2025.tsx
-import React from "react";
 import Tabs from "./components/Tabs";
 import InformacionGeneral from "./components/InformacionGeneral";
 import Noticieros from "./components/Noticieros";

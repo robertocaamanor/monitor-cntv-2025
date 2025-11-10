@@ -1,4 +1,3 @@
-import React from "react";
 import { Card, Pill, BarRow, SimpleTable } from "./shared/UIComponents";
 
 interface NoticierosProps {

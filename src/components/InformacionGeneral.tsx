@@ -1,4 +1,3 @@
-import React from "react";
 import { Card, HorizontalNumberRow } from "./shared/UIComponents";
 
 interface InformacionGeneralProps {

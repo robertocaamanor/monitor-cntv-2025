@@ -1,4 +1,3 @@
-import React from "react";
 import { Card, Pill, BarRow, HorizontalNumberRow, SimpleTable } from "./shared/UIComponents";
 
 interface MatinalesProps {
