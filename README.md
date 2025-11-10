@@ -61,6 +61,8 @@ src/
 │   ├── Noticieros.tsx            # Tab de noticiarios
 │   ├── Matinales.tsx             # Tab de matinales
 │   └── Tabs.tsx                  # Sistema de navegación por pestañas
+├── data/
+│   └── monitorData.ts            # Datos del estudio CNTV (tipados)
 ├── DashboardMonitorTV2025.tsx    # Componente principal
 ├── App.tsx
 └── main.tsx
