@@ -1,63 +1,121 @@
-# React + TypeScript + Vite
+# Monitor Noticieros y Matinales 2025
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Dashboard interactivo que visualiza los datos del estudio **"Monitor de la TV: Temas y voces en noticiarios y matinales"** realizado por el **CNTV (Consejo Nacional de Televisión de Chile)** durante el período **Mayo - Agosto 2025**.
 
-Currently, two official plugins are available:
+## 📊 Sobre el Estudio
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Este proyecto presenta de forma visual e interactiva los hallazgos del estudio oficial del CNTV que analiza:
 
-## React Compiler
+- **Temas tratados** en noticiarios centrales y matinales de TV abierta + CNN Chile
+- **Voces y fuentes** (oficiales vs. externas, distribución por género)
+- **Audiencias** (rating y alcance por programa)
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+### Fuente Original
 
-## Expanding the ESLint configuration
+- **Documento oficial**: [Monitor-Noticieros-y-Matinales-2025.pdf](https://cntv.cl/wp-content/uploads/2025/11/Monitor-Noticieros-y-Matinales-2025.pdf)
+- **Organismo**: CNTV - Departamento de Estudios
+- **Período analizado**: Mayo – Agosto 2025
+- **Programas incluidos**: 
+  - Noticiarios: 24 Horas Central, Teletrece Central, CHV Noticias Central, Meganoticias Prime, CNN Prime
+  - Matinales: Buenos Días a Todos, Tu Día, Contigo en la Mañana, Mucho Gusto
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🚀 Características
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- ✅ **Dashboard interactivo** con navegación por pestañas (Información General, Noticieros, Matinales)
+- ✅ **Visualización responsive** con TailwindCSS
+- ✅ **Componentes modulares** y reutilizables
+- ✅ **Gráficos y tablas** para análisis de datos
+- ✅ **Vista de ancho completo** para mejor visualización
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## 🛠️ Tecnologías
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **React 19.2** + **TypeScript**
+- **Vite** (build tool)
+- **TailwindCSS v4** (estilos)
+- **PostCSS** + **Autoprefixer**
+
+## 📦 Instalación
+
+```bash
+# Instalar dependencias
+npm install
+
+# Ejecutar en modo desarrollo
+npm run dev
+
+# Compilar para producción
+npm run build
+
+# Vista previa de producción
+npm run preview
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 📁 Estructura del Proyecto
+
+```
+src/
+├── components/
+│   ├── shared/
+│   │   └── UIComponents.tsx      # Componentes UI reutilizables
+│   ├── InformacionGeneral.tsx    # Tab de información general
+│   ├── Noticieros.tsx            # Tab de noticiarios
+│   ├── Matinales.tsx             # Tab de matinales
+│   └── Tabs.tsx                  # Sistema de navegación por pestañas
+├── DashboardMonitorTV2025.tsx    # Componente principal
+├── App.tsx
+└── main.tsx
+```
+
+## 📈 Hallazgos Principales
+
+### Temas Tratados
+- **Crónica policial** domina tanto en noticieros (27%) como en matinales (39%)
+- Máximo alcanzado en julio por el caso del "Rey de Meiggs"
+- Política representa el 16% en noticieros y menos en matinales
+
+### Voces y Género
+- **Predominan voces oficiales**: 86% en noticieros vs. 14% fuentes externas
+- **Desbalance de género**: Solo 23% de voces son de mujeres en noticieros
+- En matinales: 12% de fuentes externas son mujeres, 88% hombres
+
+### Audiencias
+- **Meganoticias Prime** lidera rating noticieros (4.0 pts)
+- **Matinales** empatan en rating promedio (2.0 pts)
+- Mayor alcance en **Mucho Gusto** (1.8M personas/día)
+
+## 📝 Notas
+
+- Los porcentajes son de **tiempo en pantalla**, no de número de notas
+- Algunos valores fueron aproximados para comparabilidad en formato de panel
+- Los datos representan promedios del período mayo-agosto 2025
+
+## 🤝 Créditos
+
+Dashboard desarrollado a partir del estudio oficial del CNTV. Todos los datos pertenecen al Consejo Nacional de Televisión de Chile.
+
+## 📄 Licencia
+
+Este proyecto es de código abierto y está disponible bajo licencia MIT.
+
+---
+
+## 🔧 Configuración de Desarrollo
+
+### TailwindCSS v4
+Este proyecto usa la última versión de TailwindCSS con PostCSS:
 
 ```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+// postcss.config.js
+export default {
+  plugins: {
+    '@tailwindcss/postcss': {},
+    autoprefixer: {},
+  },
+}
+```
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
+### ESLint
+Configuración con TypeScript y reglas para React:
       // Enable lint rules for React DOM
       reactDom.configs.recommended,
     ],
