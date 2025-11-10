@@ -50,6 +50,44 @@ npm run build
 npm run preview
 ```
 
+## 🚀 Despliegue en GitHub Pages
+
+Este proyecto está configurado para desplegarse automáticamente en GitHub Pages usando GitHub Actions.
+
+### Configuración (ya realizada):
+
+✅ Workflow de GitHub Actions en `.github/workflows/deploy.yml`  
+✅ Base path configurado en `vite.config.ts` como `/monitor-cntv-2025/`  
+✅ Permisos de GitHub Pages configurados
+
+### Pasos para habilitar el despliegue:
+
+1. **Habilita GitHub Pages en tu repositorio:**
+   - Ve a tu repositorio en GitHub
+   - Settings → Pages
+   - En "Source", selecciona **"GitHub Actions"**
+
+2. **Haz push de los cambios:**
+   ```bash
+   git add .
+   git commit -m "Configure GitHub Pages deployment"
+   git push origin main
+   ```
+
+3. **El sitio se desplegará automáticamente en:**
+   ```
+   https://robertocaamanor.github.io/monitor-cntv-2025/
+   ```
+
+4. **Monitorea el despliegue:**
+   - Ve a la pestaña "Actions" en tu repositorio
+   - Verás el workflow "Deploy to GitHub Pages" ejecutándose
+   - Una vez completado (✅), tu sitio estará en línea
+
+### Actualizaciones automáticas:
+
+Cada vez que hagas push a la rama `main`, el sitio se actualizará automáticamente.
+
 ## 📁 Estructura del Proyecto
 
 ```
